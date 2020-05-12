@@ -19,12 +19,12 @@ export class Redis extends Construct {
   /**
    * The DNS host for the master server.
    */
-  public readonly masterServiceHost: string;
+  public readonly masterHost: string;
 
   /**
    * The DNS host for the slave service.
    */
-  public readonly slaveServiceHost: string;
+  public readonly slaveHost: string;
 
   constructor(scope: Construct, id: string, options: RedisOptions = { }) {
     super(scope, id);
@@ -42,21 +42,28 @@ export class Redis extends Construct {
       },
     });
 
-    const slave = new ServiceDeployment(this, 'slave', {
-      image: 'gcr.io/google_samples/gb-redisslave:v1',
-      containerName: 'slave',
-      containerPort: 6379,
-      externalPort: 6379,
-      env: { GET_HOSTS_FROM: 'dns' },
-      replicas: options.slaveReplicas ?? 2,
-      labels: {
-        app: 'redis',
-        role: 'slave',
-        ...options.labels,
-      },
-    });
+    this.masterHost = master.host;
 
-    this.masterServiceHost = master.host;
-    this.slaveServiceHost = slave.host;
+    const slaveReplicas = options.slaveReplicas ?? 2;
+    if (slaveReplicas > 0) {
+      const slave = new ServiceDeployment(this, 'slave', {
+        image: 'gcr.io/google_samples/gb-redisslave:v1',
+        containerName: 'slave',
+        containerPort: 6379,
+        externalPort: 6379,
+        env: { GET_HOSTS_FROM: 'dns' },
+        replicas: slaveReplicas,
+        labels: {
+          app: 'redis',
+          role: 'slave',
+          ...options.labels,
+        },
+      });
+
+      this.slaveHost = slave.host;
+    } else {
+      // if we have no slave, then use the same host as the master
+      this.slaveHost = master.host;
+    }
   }
 }
