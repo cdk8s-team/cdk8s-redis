@@ -12,7 +12,7 @@ jobs:
       image: jsii/superchain
     steps:
       - uses: actions/checkout@v2
-      - run: npx projen@0.1.13
+      - run: npx projen@0.1.14
       - run: yarn install --frozen-lockfile
       - run: yarn build
       - name: Upload artifact
