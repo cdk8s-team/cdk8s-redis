@@ -11,6 +11,10 @@ const project = new JsiiProject({
   peerDependencies: {
     cdk8s: Semver.caret('0.20.0'),
     constructs: Semver.caret('2.0.1'),
+  },
+  python: {
+    distName: 'cdk8s-redis',
+    module: 'cdk8s_redis'
   }
 });
 
