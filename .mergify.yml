@@ -1,7 +1,8 @@
-- name: Automatic merge on approval and successful build
-  conditions:
-    - "#approved-reviews-by>=1"
-    - "status-success=build"
-  actions:
-    merge:
-      method: squash
+pull_request_rules:
+  - name: Automatic merge on approval and successful build
+    conditions:
+      - "#approved-reviews-by>=1"
+      - status-success=build
+    actions:
+      merge:
+        method: squash
