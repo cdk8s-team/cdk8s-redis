@@ -10,7 +10,7 @@ test('defaults', () => {
   const redis = new Redis(chart, 'redis');
 
   // THEN
-  expect(chart).toMatchSnapshot();
+  expect(Testing.synth(chart)).toMatchSnapshot();
   expect(redis.masterHost).toEqual('test-redis-master-service-54ad70b8');
   expect(redis.slaveHost).toEqual('test-redis-slave-service-aad78a45');
 });
