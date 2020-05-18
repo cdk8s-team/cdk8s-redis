@@ -51,7 +51,7 @@ export class Redis extends Construct {
         containerName: 'slave',
         containerPort: 6379,
         externalPort: 6379,
-        env: { GET_HOSTS_FROM: 'dns' },
+        env: { GET_HOSTS_FROM: 'env', REDIS_MASTER_SERVICE_HOST: this.masterHost },
         replicas: slaveReplicas,
         labels: {
           app: 'redis',
