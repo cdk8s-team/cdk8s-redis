@@ -4429,10 +4429,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.1.15.tgz#5e772296e934ef225c9de8f3079f7840e762d9e9"
-  integrity sha512-pWU/PFQCZWQ3aSA8VL2ajwUQagV967+uUbMkk74r6I9NILvjcVBPX4J9YvCkT60xl8KemRxmXGwA940V6omjaw==
+projen@^0.1.16:
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.1.16.tgz#93a13edc921b6e9852465befb4ca8b324f4f881c"
+  integrity sha512-aRe3jMZjEaHXWMyMriYYTmIG+/8Q+K4sc77vyO/34x7zIRu28rD7LnFF+14WLlftr/4Engf7m4UwHXj/m+fZ6w==
   dependencies:
     constructs "2.0.1"
     yaml "^1.9.2"
