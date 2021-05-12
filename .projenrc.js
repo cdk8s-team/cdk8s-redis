@@ -12,6 +12,7 @@ const project = new JsiiProject({
     cdk8s: Semver.caret('0.20.0'),
     constructs: Semver.caret('2.0.1'),
   },
+  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   python: {
     distName: 'cdk8s-redis',
     module: 'cdk8s_redis'
