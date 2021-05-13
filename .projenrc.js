@@ -11,12 +11,12 @@ const project = new JsiiProject({
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   peerDeps: [
     'cdk8s',
-    'constructs'
+    'constructs',
   ],
   publishToPypi: {
     distName: 'cdk8s-redis',
-    module: 'cdk8s_redis'
-  }
+    module: 'cdk8s_redis',
+  },
 });
 
 project.synth();
