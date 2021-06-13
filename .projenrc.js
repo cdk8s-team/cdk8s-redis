@@ -17,6 +17,11 @@ const project = new JsiiProject({
     distName: 'cdk8s-redis',
     module: 'cdk8s_redis',
   },
+  autoApproveOptions: {
+    allowedUsernames: ['cdk8s-automation'],
+    secret: 'GITHUB_TOKEN',
+  },
+  autoApproveUpgrades: true,
 });
 
 project.synth();
