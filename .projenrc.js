@@ -1,4 +1,4 @@
-const { JsiiProject, Semver } = require('projen');
+const { JsiiProject } = require('projen');
 
 const project = new JsiiProject({
   name: 'cdk8s-redis',
@@ -22,6 +22,8 @@ const project = new JsiiProject({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
+  srcdir: 'src',
+  testdir: 'src',
 });
 
 project.synth();
