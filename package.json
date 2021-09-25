@@ -39,7 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "cdk8s": "^0.33.0",
-    "constructs": "^3.3.152",
+    "constructs": "^3.3.153",
     "eslint": "^7.32.0",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -59,7 +59,7 @@
   },
   "peerDependencies": {
     "cdk8s": "^0.33.0",
-    "constructs": "^3.3.152"
+    "constructs": "^3.3.153"
   },
   "bundledDependencies": [],
   "main": "lib/index.js",
