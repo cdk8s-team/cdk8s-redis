@@ -5,8 +5,8 @@ const project = new JsiiProject({
   defaultReleaseBranch: 'master',
   description: 'redis constructs for cdk8s',
   repository: 'https://github.com/cdk8s-team/cdk8s-redis.git',
-  authorName: 'Elad Ben-Israel',
-  authorEmail: 'benisrae@amazon.com',
+  authorName: 'Amazon Web Services',
+  authorEmail: 'https://aws.amazon.com',
   stability: 'experimental',
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   peerDeps: [
