@@ -39,12 +39,11 @@ junit.xml
 /dist/version.txt
 !/.mergify.yml
 !/.github/pull_request_template.md
+!/tsconfig.dev.json
 !/src/
 /lib
 /dist/
-!/tsconfig.jest.json
 !/.eslintrc.json
-!/tsconfig.eslint.json
 .jsii
 tsconfig.json
 !/API.md
