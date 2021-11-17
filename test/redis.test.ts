@@ -1,5 +1,5 @@
 import { Chart, Testing } from 'cdk8s';
-import { Redis } from './redis';
+import { Redis } from '../src/redis';
 
 test('defaults', () => {
   // GIVEN
@@ -11,8 +11,8 @@ test('defaults', () => {
 
   // THEN
   expect(Testing.synth(chart)).toMatchSnapshot();
-  expect(redis.masterHost).toEqual('test-redis-master-service-54ad70b8');
-  expect(redis.slaveHost).toEqual('test-redis-slave-service-aad78a45');
+  expect(redis.masterHost).toEqual('test-redis-master-service-c852b917');
+  expect(redis.slaveHost).toEqual('test-redis-slave-service-c8fdf1aa');
 });
 
 test('no slave replicas will deploy only the master', () => {
@@ -27,7 +27,7 @@ test('no slave replicas will deploy only the master', () => {
 
   // THEN
   expect(Testing.synth(chart)).toMatchSnapshot();
-  expect(redis.masterHost).toEqual('test-redis-master-service-54ad70b8');
+  expect(redis.masterHost).toEqual('test-redis-master-service-c852b917');
   expect(redis.masterHost).toEqual(redis.slaveHost); // slave = master
 });
 

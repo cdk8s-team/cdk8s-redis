@@ -144,7 +144,7 @@
       "error",
       {
         "devDependencies": [
-          "**/src/**",
+          "**/test/**",
           "**/build-tools/**"
         ],
         "optionalDependencies": false,
