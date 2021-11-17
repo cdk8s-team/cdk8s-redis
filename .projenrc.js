@@ -22,8 +22,6 @@ const project = new JsiiProject({
     secret: 'GITHUB_TOKEN',
   },
   autoApproveUpgrades: true,
-  srcdir: 'src',
-  testdir: 'src',
 });
 
 project.synth();

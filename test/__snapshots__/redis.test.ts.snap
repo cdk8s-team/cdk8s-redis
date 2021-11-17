@@ -10,7 +10,7 @@ Array [
         "app": "testredismaster73F27A6F",
         "role": "master",
       },
-      "name": "test-redis-master-service-54ad70b8",
+      "name": "test-redis-master-service-c852b917",
     },
     "spec": Object {
       "ports": Array [
@@ -30,7 +30,7 @@ Array [
     "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": Object {
-      "name": "test-redis-master-deployment-f9f616d4",
+      "name": "test-redis-master-deployment-c8d84a45",
     },
     "spec": Object {
       "replicas": 1,
@@ -83,7 +83,7 @@ Array [
         "app": "testredisslave47C5B2C0",
         "role": "slave",
       },
-      "name": "test-redis-slave-service-aad78a45",
+      "name": "test-redis-slave-service-c8fdf1aa",
     },
     "spec": Object {
       "ports": Array [
@@ -103,7 +103,7 @@ Array [
     "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": Object {
-      "name": "test-redis-slave-deployment-49d103d7",
+      "name": "test-redis-slave-deployment-c836994f",
     },
     "spec": Object {
       "replicas": 2,
@@ -130,7 +130,7 @@ Array [
                 },
                 Object {
                   "name": "REDIS_MASTER_SERVICE_HOST",
-                  "value": "test-redis-master-service-54ad70b8",
+                  "value": "test-redis-master-service-c852b917",
                 },
               ],
               "image": "gcr.io/google_samples/gb-redisslave:v1",
@@ -165,7 +165,7 @@ Array [
         "app": "testredismaster73F27A6F",
         "role": "master",
       },
-      "name": "test-redis-master-service-54ad70b8",
+      "name": "test-redis-master-service-c852b917",
     },
     "spec": Object {
       "ports": Array [
@@ -185,7 +185,7 @@ Array [
     "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": Object {
-      "name": "test-redis-master-deployment-f9f616d4",
+      "name": "test-redis-master-deployment-c8d84a45",
     },
     "spec": Object {
       "replicas": 1,

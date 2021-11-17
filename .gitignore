@@ -40,6 +40,7 @@ junit.xml
 /dist/version.txt
 !/.mergify.yml
 !/.github/pull_request_template.md
+!/test/
 !/tsconfig.dev.json
 !/src/
 /lib
