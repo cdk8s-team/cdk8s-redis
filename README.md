@@ -6,7 +6,7 @@ Basic implementation of a Redis construct for cdk8s. Contributions are welcome!
 
 ## Usage
 
-The following will define a Redis cluster with a master and 2 slave replicas:
+The following will define a Redis cluster with a primary and 2 replicas:
 
 ```ts
 import { Redis } from 'cdk8s-redis';
@@ -15,21 +15,21 @@ import { Redis } from 'cdk8s-redis';
 const redis = new Redis(this, 'my-redis');
 ```
 
-DNS names can be obtained from `redis.masterHost` and `redis.slaveHost`. 
+DNS names can be obtained from `redis.primaryHost` and `redis.replicaHost`.
 
-You can specify how many slave replicas to define:
+You can specify how many replicas to define:
 
 ```ts
 new Redis(this, 'my-redis', {
-  slaveReplicas: 4
+  replicas: 4
 });
 ```
 
-Or, you can specify no slave:
+Or, you can specify no replicas:
 
 ```ts
 new Redis(this, 'my-redis', {
-  slaveReplicas: 0
+  replicas: 0
 });
 ```
 

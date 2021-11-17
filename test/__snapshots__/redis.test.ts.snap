@@ -7,10 +7,10 @@ Array [
     "kind": "Service",
     "metadata": Object {
       "labels": Object {
-        "app": "testredismaster73F27A6F",
-        "role": "master",
+        "app": "testredisprimary745D4B4B",
+        "role": "primary",
       },
-      "name": "test-redis-master-service-c852b917",
+      "name": "test-redis-primary-service-c8f36e4b",
     },
     "spec": Object {
       "ports": Array [
@@ -20,8 +20,8 @@ Array [
         },
       ],
       "selector": Object {
-        "app": "testredismaster73F27A6F",
-        "role": "master",
+        "app": "testredisprimary745D4B4B",
+        "role": "primary",
       },
       "type": "ClusterIP",
     },
@@ -30,21 +30,21 @@ Array [
     "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": Object {
-      "name": "test-redis-master-deployment-c8d84a45",
+      "name": "test-redis-primary-deployment-c8c0d573",
     },
     "spec": Object {
       "replicas": 1,
       "selector": Object {
         "matchLabels": Object {
-          "app": "testredismaster73F27A6F",
-          "role": "master",
+          "app": "testredisprimary745D4B4B",
+          "role": "primary",
         },
       },
       "template": Object {
         "metadata": Object {
           "labels": Object {
-            "app": "testredismaster73F27A6F",
-            "role": "master",
+            "app": "testredisprimary745D4B4B",
+            "role": "primary",
           },
         },
         "spec": Object {
@@ -57,7 +57,7 @@ Array [
                 },
               ],
               "image": "k8s.gcr.io/redis:e2e",
-              "name": "master",
+              "name": "primary",
               "ports": Array [
                 Object {
                   "containerPort": 6379,
@@ -80,10 +80,10 @@ Array [
     "kind": "Service",
     "metadata": Object {
       "labels": Object {
-        "app": "testredisslave47C5B2C0",
-        "role": "slave",
+        "app": "testredisreplicaCE5FD4D7",
+        "role": "replica",
       },
-      "name": "test-redis-slave-service-c8fdf1aa",
+      "name": "test-redis-replica-service-c814a5a4",
     },
     "spec": Object {
       "ports": Array [
@@ -93,8 +93,8 @@ Array [
         },
       ],
       "selector": Object {
-        "app": "testredisslave47C5B2C0",
-        "role": "slave",
+        "app": "testredisreplicaCE5FD4D7",
+        "role": "replica",
       },
       "type": "ClusterIP",
     },
@@ -103,21 +103,21 @@ Array [
     "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": Object {
-      "name": "test-redis-slave-deployment-c836994f",
+      "name": "test-redis-replica-deployment-c8e1d6e2",
     },
     "spec": Object {
       "replicas": 2,
       "selector": Object {
         "matchLabels": Object {
-          "app": "testredisslave47C5B2C0",
-          "role": "slave",
+          "app": "testredisreplicaCE5FD4D7",
+          "role": "replica",
         },
       },
       "template": Object {
         "metadata": Object {
           "labels": Object {
-            "app": "testredisslave47C5B2C0",
-            "role": "slave",
+            "app": "testredisreplicaCE5FD4D7",
+            "role": "replica",
           },
         },
         "spec": Object {
@@ -130,11 +130,11 @@ Array [
                 },
                 Object {
                   "name": "REDIS_MASTER_SERVICE_HOST",
-                  "value": "test-redis-master-service-c852b917",
+                  "value": "test-redis-primary-service-c8f36e4b",
                 },
               ],
               "image": "gcr.io/google_samples/gb-redisslave:v1",
-              "name": "slave",
+              "name": "replica",
               "ports": Array [
                 Object {
                   "containerPort": 6379,
@@ -155,17 +155,17 @@ Array [
 ]
 `;
 
-exports[`no slave replicas will deploy only the master 1`] = `
+exports[`no replicas will deploy only the primary 1`] = `
 Array [
   Object {
     "apiVersion": "v1",
     "kind": "Service",
     "metadata": Object {
       "labels": Object {
-        "app": "testredismaster73F27A6F",
-        "role": "master",
+        "app": "testredisprimary745D4B4B",
+        "role": "primary",
       },
-      "name": "test-redis-master-service-c852b917",
+      "name": "test-redis-primary-service-c8f36e4b",
     },
     "spec": Object {
       "ports": Array [
@@ -175,8 +175,8 @@ Array [
         },
       ],
       "selector": Object {
-        "app": "testredismaster73F27A6F",
-        "role": "master",
+        "app": "testredisprimary745D4B4B",
+        "role": "primary",
       },
       "type": "ClusterIP",
     },
@@ -185,21 +185,21 @@ Array [
     "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": Object {
-      "name": "test-redis-master-deployment-c8d84a45",
+      "name": "test-redis-primary-deployment-c8c0d573",
     },
     "spec": Object {
       "replicas": 1,
       "selector": Object {
         "matchLabels": Object {
-          "app": "testredismaster73F27A6F",
-          "role": "master",
+          "app": "testredisprimary745D4B4B",
+          "role": "primary",
         },
       },
       "template": Object {
         "metadata": Object {
           "labels": Object {
-            "app": "testredismaster73F27A6F",
-            "role": "master",
+            "app": "testredisprimary745D4B4B",
+            "role": "primary",
           },
         },
         "spec": Object {
@@ -212,7 +212,7 @@ Array [
                 },
               ],
               "image": "k8s.gcr.io/redis:e2e",
-              "name": "master",
+              "name": "primary",
               "ports": Array [
                 Object {
                   "containerPort": 6379,

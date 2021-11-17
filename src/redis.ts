@@ -3,10 +3,10 @@ import { ServiceDeployment } from './service-deployment';
 
 export interface RedisOptions {
   /**
-   * Number of slave replicas.
+   * Number of replicas.
    * @default 2
    */
-  readonly slaveReplicas?: number;
+  readonly replicas?: number;
 
   /**
    * Extra labels to associate with resources.
@@ -17,53 +17,53 @@ export interface RedisOptions {
 
 export class Redis extends Construct {
   /**
-   * The DNS host for the master server.
+   * The DNS host for the primary service.
    */
-  public readonly masterHost: string;
+  public readonly primaryHost: string;
 
   /**
-   * The DNS host for the slave service.
+   * The DNS host for the replica service.
    */
-  public readonly slaveHost: string;
+  public readonly replicaHost: string;
 
   constructor(scope: Construct, id: string, options: RedisOptions = { }) {
     super(scope, id);
 
-    const master = new ServiceDeployment(this, 'master', {
+    const primary = new ServiceDeployment(this, 'primary', {
       image: 'k8s.gcr.io/redis:e2e',
       containerPort: 6379,
       externalPort: 6379,
-      containerName: 'master',
+      containerName: 'primary',
       env: { GET_HOSTS_FROM: 'dns' },
       labels: {
         app: 'redis',
-        role: 'master',
+        role: 'primary',
         ...options.labels,
       },
     });
 
-    this.masterHost = master.host;
+    this.primaryHost = primary.host;
 
-    const slaveReplicas = options.slaveReplicas ?? 2;
-    if (slaveReplicas > 0) {
-      const slave = new ServiceDeployment(this, 'slave', {
+    const replicas = options.replicas ?? 2;
+    if (replicas > 0) {
+      const replica = new ServiceDeployment(this, 'replica', {
         image: 'gcr.io/google_samples/gb-redisslave:v1',
-        containerName: 'slave',
+        containerName: 'replica',
         containerPort: 6379,
         externalPort: 6379,
-        env: { GET_HOSTS_FROM: 'env', REDIS_MASTER_SERVICE_HOST: this.masterHost },
-        replicas: slaveReplicas,
+        env: { GET_HOSTS_FROM: 'env', REDIS_MASTER_SERVICE_HOST: this.primaryHost },
+        replicas: replicas,
         labels: {
           app: 'redis',
-          role: 'slave',
+          role: 'replica',
           ...options.labels,
         },
       });
 
-      this.slaveHost = slave.host;
+      this.replicaHost = replica.host;
     } else {
-      // if we have no slave, then use the same host as the master
-      this.slaveHost = master.host;
+      // if we have no slave, then use the same host as the primary
+      this.replicaHost = primary.host;
     }
   }
 }
