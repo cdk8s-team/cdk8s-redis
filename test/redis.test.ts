@@ -11,24 +11,24 @@ test('defaults', () => {
 
   // THEN
   expect(Testing.synth(chart)).toMatchSnapshot();
-  expect(redis.masterHost).toEqual('test-redis-master-service-c852b917');
-  expect(redis.slaveHost).toEqual('test-redis-slave-service-c8fdf1aa');
+  expect(redis.primaryHost).toEqual('test-redis-primary-service-c8f36e4b');
+  expect(redis.replicaHost).toEqual('test-redis-replica-service-c814a5a4');
 });
 
-test('no slave replicas will deploy only the master', () => {
+test('no replicas will deploy only the primary', () => {
   // GIVEN
   const app = Testing.app();
   const chart = new Chart(app, 'test');
 
   // WHEN
   const redis = new Redis(chart, 'redis', {
-    slaveReplicas: 0,
+    replicas: 0,
   });
 
   // THEN
   expect(Testing.synth(chart)).toMatchSnapshot();
-  expect(redis.masterHost).toEqual('test-redis-master-service-c852b917');
-  expect(redis.masterHost).toEqual(redis.slaveHost); // slave = master
+  expect(redis.primaryHost).toEqual('test-redis-primary-service-c8f36e4b');
+  expect(redis.primaryHost).toEqual(redis.replicaHost); // replica = primary
 });
 
 test('labels can be added', () => {
