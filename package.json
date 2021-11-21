@@ -63,6 +63,13 @@
     "constructs": "^3.3.161"
   },
   "bundledDependencies": [],
+  "keywords": [
+    "cache",
+    "cdk8s",
+    "database",
+    "kubernetes",
+    "redis"
+  ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",

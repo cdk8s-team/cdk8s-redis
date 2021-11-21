@@ -13,6 +13,13 @@ const project = new JsiiProject({
     'cdk8s',
     'constructs',
   ],
+  keywords: [
+    'cdk8s',
+    'redis',
+    'database',
+    'cache',
+    'kubernetes',
+  ],
   publishToPypi: {
     distName: 'cdk8s-redis',
     module: 'cdk8s_redis',
