@@ -1,6 +1,6 @@
 {
   "name": "cdk8s-redis",
-  "description": "redis constructs for cdk8s",
+  "description": "Basic implementation of a Redis construct for cdk8s.",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdk8s-team/cdk8s-redis.git"
@@ -66,6 +66,7 @@
   "keywords": [
     "cache",
     "cdk8s",
+    "containers",
     "database",
     "kubernetes",
     "redis"
