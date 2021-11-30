@@ -3,7 +3,7 @@ const { JsiiProject } = require('projen');
 const project = new JsiiProject({
   name: 'cdk8s-redis',
   defaultReleaseBranch: 'master',
-  description: 'redis constructs for cdk8s',
+  description: 'Basic implementation of a Redis construct for cdk8s.',
   repository: 'https://github.com/cdk8s-team/cdk8s-redis.git',
   authorName: 'Amazon Web Services',
   authorEmail: 'https://aws.amazon.com',
@@ -19,6 +19,7 @@ const project = new JsiiProject({
     'database',
     'cache',
     'kubernetes',
+    'containers',
   ],
   publishToPypi: {
     distName: 'cdk8s-redis',
