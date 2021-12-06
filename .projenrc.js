@@ -1,6 +1,6 @@
-const { JsiiProject } = require('projen');
+const { cdk } = require('projen');
 
-const project = new JsiiProject({
+const project = new cdk.JsiiProject({
   name: 'cdk8s-redis',
   defaultReleaseBranch: 'master',
   description: 'Basic implementation of a Redis construct for cdk8s.',
