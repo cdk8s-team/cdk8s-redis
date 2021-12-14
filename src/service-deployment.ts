@@ -75,7 +75,7 @@ export class ServiceDeployment extends Construct {
 
     const label = {
       ...options.labels,
-      app: Node.of(this).uniqueId,
+      app: `${id}${Node.of(this).addr}`,
     };
 
     const service = new k8s.Service(this, 'service', {

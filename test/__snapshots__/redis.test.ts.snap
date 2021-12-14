@@ -7,7 +7,7 @@ Array [
     "kind": "Service",
     "metadata": Object {
       "labels": Object {
-        "app": "testredisprimary745D4B4B",
+        "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
         "role": "primary",
       },
       "name": "test-redis-primary-service-c8f36e4b",
@@ -20,7 +20,7 @@ Array [
         },
       ],
       "selector": Object {
-        "app": "testredisprimary745D4B4B",
+        "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
         "role": "primary",
       },
       "type": "ClusterIP",
@@ -36,14 +36,14 @@ Array [
       "replicas": 1,
       "selector": Object {
         "matchLabels": Object {
-          "app": "testredisprimary745D4B4B",
+          "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
           "role": "primary",
         },
       },
       "template": Object {
         "metadata": Object {
           "labels": Object {
-            "app": "testredisprimary745D4B4B",
+            "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
             "role": "primary",
           },
         },
@@ -80,7 +80,7 @@ Array [
     "kind": "Service",
     "metadata": Object {
       "labels": Object {
-        "app": "testredisreplicaCE5FD4D7",
+        "app": "replicac8dfe5fbb37f49bc8b747fb7ebdee0549ee0d2cbc0",
         "role": "replica",
       },
       "name": "test-redis-replica-service-c814a5a4",
@@ -93,7 +93,7 @@ Array [
         },
       ],
       "selector": Object {
-        "app": "testredisreplicaCE5FD4D7",
+        "app": "replicac8dfe5fbb37f49bc8b747fb7ebdee0549ee0d2cbc0",
         "role": "replica",
       },
       "type": "ClusterIP",
@@ -109,14 +109,14 @@ Array [
       "replicas": 2,
       "selector": Object {
         "matchLabels": Object {
-          "app": "testredisreplicaCE5FD4D7",
+          "app": "replicac8dfe5fbb37f49bc8b747fb7ebdee0549ee0d2cbc0",
           "role": "replica",
         },
       },
       "template": Object {
         "metadata": Object {
           "labels": Object {
-            "app": "testredisreplicaCE5FD4D7",
+            "app": "replicac8dfe5fbb37f49bc8b747fb7ebdee0549ee0d2cbc0",
             "role": "replica",
           },
         },
@@ -162,7 +162,7 @@ Array [
     "kind": "Service",
     "metadata": Object {
       "labels": Object {
-        "app": "testredisprimary745D4B4B",
+        "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
         "role": "primary",
       },
       "name": "test-redis-primary-service-c8f36e4b",
@@ -175,7 +175,7 @@ Array [
         },
       ],
       "selector": Object {
-        "app": "testredisprimary745D4B4B",
+        "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
         "role": "primary",
       },
       "type": "ClusterIP",
@@ -191,14 +191,14 @@ Array [
       "replicas": 1,
       "selector": Object {
         "matchLabels": Object {
-          "app": "testredisprimary745D4B4B",
+          "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
           "role": "primary",
         },
       },
       "template": Object {
         "metadata": Object {
           "labels": Object {
-            "app": "testredisprimary745D4B4B",
+            "app": "primaryc8b2fe46a20ee748f914a8b108427882c2c06096a9",
             "role": "primary",
           },
         },

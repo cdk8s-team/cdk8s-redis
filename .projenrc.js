@@ -6,12 +6,12 @@ const project = new cdk.JsiiProject({
   description: 'Basic implementation of a Redis construct for cdk8s.',
   repository: 'https://github.com/cdk8s-team/cdk8s-redis.git',
   authorName: 'Amazon Web Services',
-  authorEmail: 'https://aws.amazon.com',
+  authorUrl: 'https://aws.amazon.com',
   stability: 'experimental',
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   peerDeps: [
     'cdk8s',
-    'constructs',
+    'constructs@^10',
   ],
   keywords: [
     'cdk8s',
