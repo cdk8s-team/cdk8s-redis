@@ -2,7 +2,7 @@ const { cdk } = require('projen');
 
 const project = new cdk.JsiiProject({
   name: 'cdk8s-redis',
-  defaultReleaseBranch: 'master',
+  defaultReleaseBranch: 'main',
   description: 'Basic implementation of a Redis construct for cdk8s.',
   repository: 'https://github.com/cdk8s-team/cdk8s-redis.git',
   authorName: 'Amazon Web Services',
