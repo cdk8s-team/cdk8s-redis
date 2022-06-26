@@ -1,4 +1,4 @@
-import { Construct, Node } from 'constructs';
+import { Construct } from 'constructs';
 import * as k8s from './imports/k8s';
 
 export interface ServiceDeploymentOptions {
@@ -75,7 +75,7 @@ export class ServiceDeployment extends Construct {
 
     const label = {
       ...options.labels,
-      app: Node.of(this).uniqueId,
+      app: this.node.addr,
     };
 
     const service = new k8s.Service(this, 'service', {
