@@ -1372,10 +1372,10 @@ case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk8s@2.3.49:
-  version "2.3.49"
-  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-2.3.49.tgz#6f702a87d8ef7c79e1f8a0b061270ffbb3eb15be"
-  integrity sha512-ypDKYkaUHNE0qvmTmIXsvYvHfs/qZp5BaMloqYevwEV+gyljWg1PaB7EX3+AqGOIYl6izOqQu2p+6JTSP5dVCg==
+cdk8s@2.3.50:
+  version "2.3.50"
+  resolved "https://registry.yarnpkg.com/cdk8s/-/cdk8s-2.3.50.tgz#589ebd9592ae2a7756b7584fd4f688713f594729"
+  integrity sha512-FM3p+gIwxMeC3TVn368zkauWVtUibmP2mSiQTRmc30le4bQSB4TQpNibbuKAUfO50kLcdI2vkW50q52WEPrIfA==
   dependencies:
     fast-json-patch "^3.1.1"
     follow-redirects "^1.15.1"
