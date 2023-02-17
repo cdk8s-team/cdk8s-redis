@@ -1,17 +1,17 @@
-const { cdk } = require('projen');
+const { Cdk8sTeamJsiiProject } = require('@cdk8s/projen-common');
 
-const project = new cdk.JsiiProject({
+const project = new Cdk8sTeamJsiiProject({
   name: 'cdk8s-redis',
   defaultReleaseBranch: 'main',
   description: 'Basic implementation of a Redis construct for cdk8s.',
-  repository: 'https://github.com/cdk8s-team/cdk8s-redis.git',
-  authorName: 'Amazon Web Services',
-  authorEmail: 'https://aws.amazon.com',
   stability: 'experimental',
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
   peerDeps: [
     'cdk8s',
     'constructs',
+  ],
+  devDeps: [
+    '@cdk8s/projen-common',
   ],
   keywords: [
     'cdk8s',
@@ -21,15 +21,6 @@ const project = new cdk.JsiiProject({
     'kubernetes',
     'containers',
   ],
-  publishToPypi: {
-    distName: 'cdk8s-redis',
-    module: 'cdk8s_redis',
-  },
-  autoApproveOptions: {
-    allowedUsernames: ['cdk8s-automation'],
-    secret: 'GITHUB_TOKEN',
-  },
-  autoApproveUpgrades: true,
 });
 
 project.synth();
