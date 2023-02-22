@@ -30,7 +30,7 @@ export class Redis extends Construct {
     super(scope, id);
 
     const primary = new ServiceDeployment(this, 'primary', {
-      image: 'k8s.gcr.io/redis:e2e',
+      image: 'registry.k8s.io/redis:e2e',
       containerPort: 6379,
       externalPort: 6379,
       containerName: 'primary',
