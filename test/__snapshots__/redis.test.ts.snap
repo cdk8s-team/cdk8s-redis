@@ -56,7 +56,7 @@ Array [
                   "value": "dns",
                 },
               ],
-              "image": "k8s.gcr.io/redis:e2e",
+              "image": "registry.k8s.io/redis:e2e",
               "name": "primary",
               "ports": Array [
                 Object {
@@ -211,7 +211,7 @@ Array [
                   "value": "dns",
                 },
               ],
-              "image": "k8s.gcr.io/redis:e2e",
+              "image": "registry.k8s.io/redis:e2e",
               "name": "primary",
               "ports": Array [
                 Object {
