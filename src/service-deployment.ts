@@ -56,7 +56,7 @@ export enum ServiceType {
   EXTERNAL_NAME = 'ExternalName',
   CLUSTER_IP = 'ClusterIP',
   NODE_PORT = 'NodePort',
-  LOAD_BALANCER = 'LoadBalancer'
+  LOAD_BALANCER = 'LoadBalancer',
 }
 
 export class ServiceDeployment extends Construct {
