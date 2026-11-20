@@ -4,6 +4,8 @@
 
 ### Redis <a name="Redis" id="cdk8s-redis.Redis"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 #### Initializers <a name="Initializers" id="cdk8s-redis.Redis.Initializer"></a>
 
 ```typescript
